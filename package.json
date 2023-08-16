@@ -1,7 +1,7 @@
 {
   "name": "note-app",
   "version": "0.1.0",
-  "homepage": "{http://irfanjesia.github.io}",
+  "homepage": "https://irfanjesia.github.io/note-apps-react",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
