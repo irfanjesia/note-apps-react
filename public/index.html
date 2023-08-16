@@ -1,15 +1,3 @@
-(function (location) {
-  if (location.search[1] !!* '/') {
-  var decoded = location.search.slice(1).split('&').map(function (s)
- {
-  return s.replace(/~and~/g, '&')
-  }).join('?');
-  window.history.replaceState(null, null,
-  location.pathname.slice(0, -1) + decoded + location.hash
-  );
-  }
- }(window.location))
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,5 +18,18 @@
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
 </body>
+
+<script>
+  (function (location) {
+    if (location.search[1] === '/') {
+      var decoded = location.search.slice(1).split('&').map(function (s) {
+        return s.replace(/~and~/g, '&')
+      }).join('?');
+      window.history.replaceState(null, null,
+        location.pathname.slice(0, -1) + decoded + location.hash
+      );
+    }
+  }(window.location))
+</script>
 
 </html>
